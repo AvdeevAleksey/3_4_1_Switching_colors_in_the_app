@@ -13,14 +13,22 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     Spinner languageSpinner;
+    Spinner colorSpinner;
     String choiceLanguage;
+    String choiceColor;
+    private static int sTheme;
+    public final static int THEME_GREEN = 0;
+    public final static int THEME_BLUE = 1;
+    public final static int THEME_BACK = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         languageSpinner=findViewById(R.id.languageSpinner);
+        colorSpinner=findViewById(R.id.colorSpinner);
         givLanguage();
+        givColor();
     }
 
     public void onClick(View view) {
@@ -60,6 +68,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void givColor() {
+        ArrayAdapter<CharSequence> adapterColors = ArrayAdapter.createFromResource(this, R.array.colors, android.R.layout.simple_spinner_item);
+        adapterColors.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        colorSpinner.setAdapter(adapterColors);
+
+        colorSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String[] choiceColors = getResources().getStringArray(R.array.colors);
+                choiceColor = choiceColors[i];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                //showMyMessage("Ничего не выбрано", MainActivity.this);
+            }
+        });
+    }
+    private void setColor() {
 
     }
 }

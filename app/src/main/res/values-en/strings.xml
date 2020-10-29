@@ -5,6 +5,11 @@
         <item>Russian</item>
         <item>English</item>
     </string-array>
+    <string-array name="colors">
+        <item>Green</item>
+        <item>Blue</item>
+        <item>Black</item>
+    </string-array>
     <string name="text">Deep in Siberia’s mines, let naught\n
     Subdue your proud and patient spirit.\n
     Your crushing toil and lofty thought\n
