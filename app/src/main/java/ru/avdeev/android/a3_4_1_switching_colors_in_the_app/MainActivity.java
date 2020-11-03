@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        ConstraintLayout myView = findViewById(R.id.myLayout);
         if (choiceLanguage.equals("Russian")) {
             Locale locale = new Locale("ru");
             Configuration config = new Configuration();
@@ -52,15 +51,12 @@ public class MainActivity extends AppCompatActivity {
         switch (choiceColor) {
             case 0:
                 sTheme = R.style.ThemeGreen;
-                myView.setBackgroundResource(R.color.colorPrimaryGreen);
                 break;
             case 1:
                 sTheme = R.style.ThemeBlue;
-                myView.setBackgroundResource(R.color.colorPrimaryBlue);
                 break;
             case 2:
                 sTheme = R.style.ThemeBlack;
-                myView.setBackgroundResource(R.color.colorPrimaryDarkBlack);
                 break;
             default:
                 break;
