@@ -41,35 +41,31 @@ public class MainActivity extends AppCompatActivity {
             Configuration config = new Configuration();
             config.setLocale(locale);
             getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
-            recreate();
         } else {
             if (choiceLanguage.equals("Английский")) {
                 Locale locale = new Locale("en");
                 Configuration config = new Configuration();
                 config.setLocale(locale);
                 getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
-                recreate();
             }
         }
         switch (choiceColor) {
             case 0:
                 sTheme = R.style.ThemeGreen;
-                myView.setBackgroundResource(R.color.colorPrimaryDarkGreen);
-                recreate();
+                myView.setBackgroundResource(R.color.colorPrimaryGreen);
                 break;
             case 1:
                 sTheme = R.style.ThemeBlue;
-                myView.setBackgroundResource(R.color.colorPrimaryDarkBlue);
-                recreate();
+                myView.setBackgroundResource(R.color.colorPrimaryBlue);
                 break;
             case 2:
                 sTheme = R.style.ThemeBlack;
                 myView.setBackgroundResource(R.color.colorPrimaryDarkBlack);
-                recreate();
                 break;
             default:
                 break;
         }
+        recreate();
     }
     private void givLanguage () {
         ArrayAdapter<CharSequence> adapterLanguages = ArrayAdapter.createFromResource(this, R.array.languages, android.R.layout.simple_spinner_item);
