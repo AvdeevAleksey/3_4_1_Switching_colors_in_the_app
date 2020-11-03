@@ -12,7 +12,7 @@
     <color name="colorTextBlue">#5517AC</color>
     <color name="colorAccentBlue">#009688</color>
     <color name="colorPrimaryBlack">#9E9E9F</color>
-    <color name="colorPrimaryDarkBlack">#6F6F70</color>
+    <color name="colorPrimaryDarkBlack">#1C1C1C</color>
     <color name="colorTextBlack">#FFFFFF</color>
     <color name="colorAccentBlack">#373737</color>
 </resources>

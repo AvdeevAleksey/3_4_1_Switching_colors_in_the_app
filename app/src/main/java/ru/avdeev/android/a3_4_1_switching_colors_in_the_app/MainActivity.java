@@ -2,13 +2,16 @@ package ru.avdeev.android.a3_4_1_switching_colors_in_the_app;
 
 import androidx.annotation.StyleRes;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 
 import java.util.Locale;
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
+        ConstraintLayout myView = findViewById(R.id.myLayout);
         if (choiceLanguage.equals("Russian")) {
             Locale locale = new Locale("ru");
             Configuration config = new Configuration();
@@ -50,14 +54,17 @@ public class MainActivity extends AppCompatActivity {
         switch (choiceColor) {
             case 0:
                 sTheme = R.style.ThemeGreen;
+                myView.setBackgroundResource(R.color.colorPrimaryDarkGreen);
                 recreate();
                 break;
             case 1:
                 sTheme = R.style.ThemeBlue;
+                myView.setBackgroundResource(R.color.colorPrimaryDarkBlue);
                 recreate();
                 break;
             case 2:
                 sTheme = R.style.ThemeBlack;
+                myView.setBackgroundResource(R.color.colorPrimaryDarkBlack);
                 recreate();
                 break;
             default:
